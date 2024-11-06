@@ -2,6 +2,8 @@ services:
   speedtest:
     build: .
     restart: unless-stopped
+    ports:
+      - 127.0.0.1:8080:8080/tcp
     volumes:
-      - "/etc/librespeed.toml:/usr/local/bin/configs.toml"
-      - "/var/lib/librespeed/assets:/usr/local/bin/assets"
+      - "./data/librespeed.toml:/usr/local/bin/configs.toml"
+      - "./data/assets:/usr/local/bin/assets"
